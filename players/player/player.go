@@ -2,10 +2,23 @@ package player
 
 import "fmt"
 
-type Player struct {
-  Name string
-	Level int
+type player struct {
+  name string
+	level int
 }
-func Test (){
-	fmt.Println("Test")
+func (player) Test () string{
+	return "TEST"
+}
+
+
+func New(name string, level int) player {
+	return player{
+		name: name,
+		level: level,
+	}
+}
+
+func (p player) ToString(){
+	fmt.Println("Name:", p.name)
+	fmt.Println("Level:", p.level)
 }
